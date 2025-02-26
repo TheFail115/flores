@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <style>
+        /* Fondo con degradado */
+        body {
+            text-align: center;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Estilos del mensaje */
+        h1 {
+            color: #ff0066;
+            font-size: 50px;
+            text-shadow: 2px 2px 5px #ff1493;
+            animation: brillar 1.5s infinite alternate;
+        }
+
+        @keyframes brillar {
+            0% { text-shadow: 2px 2px 5px #ff1493; }
+            100% { text-shadow: 4px 4px 10px #ff69b4; }
+        }
+
+        #mensaje {
+            font-size: 24px;
+            color: #ffffff;
+            background: rgba(255, 0, 100, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: aparecer 2s ease-in-out;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Animaciones de globos */
+        .globo {
+            position: absolute;
+            font-size: 40px;
+            animation: flotar 4s infinite ease-in-out;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-50px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Animaciones de flores */
+        .flor {
+            position: absolute;
+            font-size: 30px;
+            animation: girar 6s infinite linear;
+        }
+
+        @keyframes girar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Botón para reproducir la música manualmente (opcional) */
+        button {
+            background-color: #ff1493;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #ff0066;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 ¡Feliz Cumpleaños! 🎂🎈</h1>
+    <p id="mensaje">Que este día esté lleno de amor, alegría y muchas sorpresas. 🌸💖</p>
+
+    <!-- Globos animados -->
+    <div class="globo" style="top: 20%; left: 10%;">🎈</div>
+    <div class="globo" style="top: 50%; left: 20%; animation-delay: 1s;">🎈</div>
+    <div class="globo" style="top: 30%; right: 15%; animation-delay: 2s;">🎈</div>
+    <div class="globo" style="top: 60%; right: 5%; animation-delay: 3s;">🎈</div>
+
+    <!-- Flores decorativas -->
+    <div class="flor" style="top: 80%; left: 10%;">🌸</div>
+    <div class="flor" style="top: 75%; right: 20%;">🌸</div>
+
+    <!-- Música de fondo -->
+    <audio id="musica" loop>
+        <source src="cumpleaños.mp3" type="audio/mp3">
+        Tu navegador no soporta audio.
+    </audio>
+    <button onclick="document.getElementById('musica').play()">🎶 Reproducir Música</button>
+</body>
+</html>
